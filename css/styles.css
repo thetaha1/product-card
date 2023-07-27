@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary-400: #e0840e;
+  --clr-primary-500: #854f0a;
+  --clr-secondary-200: hsl(30, 38%, 92%);
+
+  --clr-neutral-900: hsl(212, 21%, 14%);
+  --clr-neutral-400: hsl(228, 12%, 48%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --ff-accent: "Fraunces", serif;
+  --ff-base: "Montserrat", sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+/* General Styling */
+
+body {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: 0.875rem;
+  color: var(--clr-neutral-400);
+  /* background-color: var(--clr-secondary-200); */
+  background-image: url("/images/bg-img.svg");
+  height: 100vh;
+
+  /* for this project only */
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+}
+body::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  scroll-behavior: none;
+  height: calc(105vh);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(18.5px);
+  z-index: -1;
+}
+
+/* utilities */
+.product {
+  --content-padding: 1.5rem;
+  display: grid;
+  background-color: var(--clr-neutral-100);
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 600px;
+  box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* @media (min-width: 495px) and (max-width: 999px) { */
+@media (min-width: 495px) {
+  .product {
+    width: 445px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .product__image {
+    height: 100%;
+  }
+
+  .product {
+    grid-template-columns: 1fr 1fr;
+    width: auto;
+    height: auto;
+    margin-bottom: 25px;
+  }
+
+  .product__content {
+    padding: 32px !important;
+  }
+
+  .product__category {
+    margin-bottom: 1.25rem;
+  }
+
+  .product__title {
+    margin-bottom: 1.5rem;
+  }
+
+  .product__content p {
+    margin-bottom: 1.81rem;
+  }
+
+  .button {
+    margin-top: 1.87rem;
+  }
+}
+
+/* product content */
+.product__content {
+  padding: var(--content-padding);
+  display: grid;
+}
+
+.product__category {
+  letter-spacing: 0.3125rem;
+  text-transform: uppercase;
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-regular);
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.product__title {
+  color: var(--clr-neutral-900);
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-bold);
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.product__content p {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: 0.875rem;
+  line-height: 1.4375rem;
+  margin-bottom: 1.5rem;
+}
+
+/* price */
+.price {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.1875rem;
+  margin-bottom: 0rem;
+}
+
+.price .original-price {
+  color: var(--clr-primary-400);
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-bold);
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-bottom: 0rem;
+}
+
+.price .product__original-price {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: 0.8125rem;
+  line-height: 1.4375rem;
+  text-decoration-line: strikethrough;
+  margin-bottom: 0rem;
+}
+
+/* button */
+.button {
+  height: 3rem;
+  display: inline-flex;
+  justify-content: center;
+  gap: 0.73rem;
+  cursor: pointer;
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-bold);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 0;
+  transition: 0.3s;
+}
+
+.button[data-icon="shopping-cart"]::before {
+  content: "";
+  width: 15px;
+  height: 16px;
+  background-image: url("/images/icon-cart.svg");
+}
+
+.button:is(:hover, :focus) {
+  background-color: var(--clr-primary-500);
+}

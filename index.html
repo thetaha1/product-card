@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Product preview card component</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <article class="product">
+        <picture class="product__image">
+          <source
+            srcset="./images/image-product-desktop.jpg"
+            media="(min-width: 1000px)"
+          />
+          <img
+            src="./images/image-product-mobile.jpg"
+            alt="you have error in displaying img"
+          />
+        </picture>
+        <div class="product__content">
+          <p class="product__category">Roasters</p>
+          <h1 class="product__title">Battecheek Essence Eau De coffee</h1>
+          <p>
+            The coffee product cannot be described using the given text as it
+            mentions a perfumer and the House of CHANEL.
+          </p>
+          <div class="price">
+            <p class="original-price">$29.99</p>
+            <p class="product__original-price">$49.99</p>
+          </div>
+          <button class="button" data-icon="shopping-cart">Add to Cart</button>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
