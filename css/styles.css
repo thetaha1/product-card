@@ -90,7 +90,7 @@ body::before {
   scroll-behavior: none;
   height: calc(105vh);
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(18.5px);
+  backdrop-filter: blur(3px);
   z-index: -1;
 }
 
